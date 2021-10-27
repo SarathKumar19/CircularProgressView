@@ -26,9 +26,15 @@ class ViewController: UIViewController {
 
 private extension ViewController {
 	func addProgressView() {
-		self.circularProgressView = CircularProgressView(frame: self.view.bounds)
+		let frame = self.view.bounds.insetBy(dx: 20, dy: 20)
+		self.circularProgressView = CircularProgressView(frame: frame)
 		self.circularProgressView.backgroundColor = .clear
 		self.circularProgressView.setDefaults()
+		self.circularProgressView.configure(
+			ringColor: .systemGreen,
+			ringWidth: 15,
+			ringCapStyle: .square
+		)
 		self.view.addSubview(self.circularProgressView)
 	}
 
